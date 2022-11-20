@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AltStore Sources</title>
+  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.4/dist/flowbite.min.css" />
+</head>
+<body>
+  <section class="text-center py-12 px-4">
+    <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">AltStore Sources</h1>
+    <p class="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+      AltStore seeks to revolutionize the way you install apps on your iOS devices. We seek to help you find those apps.
+    </p>
+    <a href="https://altstore.io" class="inline-flex justify-center items-center py-2 px-5 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+      Install AltStore
+    </a>
+  </section>
+
+  <section id="sources" class="px-4 py-12 bg-gray-100">
+    <p class="text-center py-2 mb-6 font-semibold text-2xl">
+      Click "Install" to add source
+    </p>
+
+    <ul class="max-w-lg divide-y divide-gray-200 dark:divide-gray-700 mx-auto">
+      <li class="pb-3 sm:pb-4">
+        <div class="flex items-center space-x-4">
+          <div class="flex-1 min-w-0">
+            <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+              RandomBlock1
+            </p>
+            <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+              https://randomblock1.com/altstore/apps.json
+            </p>
+          </div>
+          <div url="https://randomblock1.com/altstore/apps.json" class="inline-flex items-center text-sm font-semibold text-gray-900 dark:text-white">
+            <button onclick="addToAltStore(this)" class="inline-flex justify-center items-center py-2 px-5 text-center text-white bg-purple-700 rounded-lg hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 dark:focus:ring-purple-900">Install</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <script>
+    function addToAltStore(element) {
+      window.open("altstore://source?URL=" + element.parentElement.getAttribute("url"));
+    }
+  </script>
+  <script src="https://unpkg.com/flowbite@1.5.4/dist/flowbite.js"></script>
+</body>
+</html>
